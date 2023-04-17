@@ -15,10 +15,12 @@ const Index = ({ pokemon }) => {
         return (
           <ul>
             <li>
-              {poke.name
-                .split(" ")
-                .map((s) => s.charAt(0).toUpperCase() + s.slice(1))
-                .join(" ")}
+              <a href={`/pokemon/${poke.name}`}>
+                {poke.name
+                  .split(" ")
+                  .map((s) => s.charAt(0).toUpperCase() + s.slice(1))
+                  .join(" ")}
+              </a>
             </li>
           </ul>
         );
