@@ -11,22 +11,18 @@ const Index = ({ pokemon }) => {
   return (
     <div style={myStyle}>
       <h1>See all Pokemon</h1>
-      {pokemon.map((poke) => {
-        return (
-          <ul>
-            {pokemon.map((poke, index) => (
-              <li key={index}>
-                <a href={`/pokemon/${index}`}>
-                  {poke.name
-                    .split(" ")
-                    .map((s) => s.charAt(0).toUpperCase() + s.slice(1))
-                    .join(" ")}
-                </a>
-              </li>
-            ))}
-          </ul>
-        );
-      })}
+      <ul>
+        {pokemon.map((poke, index) => (
+          <li key={index}>
+            <a href={`/pokemon/${index}`}>
+              {poke.name
+                .split(" ")
+                .map((s) => s.charAt(0).toUpperCase() + s.slice(1))
+                .join(" ")}
+            </a>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
