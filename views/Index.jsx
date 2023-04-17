@@ -14,14 +14,16 @@ const Index = ({ pokemon }) => {
       {pokemon.map((poke) => {
         return (
           <ul>
-            <li>
-              <a href={`/pokemon/${poke.name}`}>
-                {poke.name
-                  .split(" ")
-                  .map((s) => s.charAt(0).toUpperCase() + s.slice(1))
-                  .join(" ")}
-              </a>
-            </li>
+            {pokemon.map((poke, index) => (
+              <li key={index}>
+                <a href={`/pokemon/${index}`}>
+                  {poke.name
+                    .split(" ")
+                    .map((s) => s.charAt(0).toUpperCase() + s.slice(1))
+                    .join(" ")}
+                </a>
+              </li>
+            ))}
           </ul>
         );
       })}
