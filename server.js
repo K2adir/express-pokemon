@@ -26,6 +26,11 @@ app.get("/pokemon", (req, res) => {
   res.render("Index", { pokemon });
 });
 
+app.get("/pokemon/:id", (req, res) => {
+  const index = req.params.id;
+  res.send(`<h1>${index}</h1>`);
+});
+
 app.listen(PORT, () => {
   console.log("Port ->", PORT);
 });
