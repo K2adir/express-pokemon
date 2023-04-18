@@ -5,11 +5,7 @@ const myStyle = {
   backgroundColor: "#000000",
 };
 
-const Index = (props) => {
-  const { pokemon } = props;
-  {
-    console.log(pokemon._id);
-  }
+const Index = ({ pokemon }) => {
   return (
     <div style={myStyle}>
       <h1>See all Pokemon</h1>
@@ -17,10 +13,10 @@ const Index = (props) => {
         <a href="/pokemon/new">Register New Pokemon</a>
       </h2>
       <ul>
-        {pokemon.map((poke, _id) => (
-          <li key={poke._id}>
-            <a href={`/pokemon/${poke._id}`}>
-              {poke.name
+        {pokemon.map(({ _id, name }) => (
+          <li key={_id}>
+            <a href={`/pokemon/${_id}`}>
+              {name
                 .split(" ")
                 .map((s) => s.charAt(0).toUpperCase() + s.slice(1))
                 .join(" ")}
