@@ -13,6 +13,9 @@ const New = () => {
           Submit Homie
         </button>
       </form>
+      <h2>
+        <a href="/pokemon/">Go Back To List</a>
+      </h2>
     </>
   );
 };

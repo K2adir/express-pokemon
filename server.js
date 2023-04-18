@@ -18,7 +18,8 @@ app.use((req, res, next) => {
 app.use(express.urlencoded({ extended: false }));
 
 app.get("/", (req, res) => {
-  res.send("<h1>Hello</h1>");
+  res.send(`<h1>Hello</h1>
+  <button><a href='/pokemon'>Go List </a> </button>`);
 });
 
 app.get("/pokemon/new", (req, res) => {
